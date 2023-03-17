@@ -1,6 +1,7 @@
 
 const names = require('./names')
 const funcs = require('./utils')
+require('./persistance/index')
 
 const http = require('http');
 
