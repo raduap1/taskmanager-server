@@ -1,25 +1,18 @@
+const express = require('express')
+const {getTasks, getTask, createTask} = require('./persistance/index')
 
-const names = require('./names')
-const funcs = require('./utils')
-require('./persistance/index')
+const app = express()
 
-const http = require('http');
+app.get("/tasks", async (req, res) => {
+  const tasks = await getTasks()
+  res.send(tasks)
+})
 
-const hostname = '0.0.0.0';
-const port = 4000;
+app.use((err, req, res, next) => {
+  console.error(err.stack)
+  res.status(500).send('Something broke!')
+})
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
-  console.log(__dirname);
-  console.log(__filename);
-});
-
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
-
-
-
-funcs.exampleFunction(names.a)
+app.listen (4000, () => {
+  console.log('Server running on port 4000')
+})
