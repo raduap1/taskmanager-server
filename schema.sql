@@ -5,10 +5,20 @@ CREATE TABLE task(
     id integer PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(255) NOT NULL,
     description VARCHAR(1000) NOT NULL,
-    type VARCHAR(255) NOT NULL
+    type VARCHAR(255) NOT NULL,
+    status VARCHAR(255) NOT NULL
 );
 
-INSERT INTO task (TITLE, DESCRIPTION, TYPE) VALUES ('Task 1', 'task description 1', 'STORY');
-INSERT INTO task (TITLE, DESCRIPTION, TYPE) VALUES ('Task 2', 'task description 2', 'STORY');
-INSERT INTO task (TITLE, DESCRIPTION, TYPE) VALUES ('Task 3', 'task description 3', 'DEFECT');
-INSERT INTO task (TITLE, DESCRIPTION, TYPE) VALUES ('Task 4', 'task description 4', 'STORY');
+INSERT INTO task (TITLE, DESCRIPTION, TYPE, STATUS) VALUES ('Task 1', 'task description 1', 'STORY', 'TODO');
+INSERT INTO task (TITLE, DESCRIPTION, TYPE, STATUS) VALUES ('Task 2', 'task description 2', 'STORY', 'INPROGRESS');
+INSERT INTO task (TITLE, DESCRIPTION, TYPE, STATUS) VALUES ('Task 3', 'task description 3', 'DEFECT', 'TESTABLE');
+INSERT INTO task (TITLE, DESCRIPTION, TYPE, STATUS) VALUES ('Task 4', 'task description 4', 'STORY', 'DONE');
+INSERT INTO task (TITLE, DESCRIPTION, TYPE, STATUS) VALUES ('Task 5', 'task description 5', 'STORY', 'INPROGRESS');
+INSERT INTO task (TITLE, DESCRIPTION, TYPE, STATUS) VALUES ('Task 6', 'task description 6', 'DEFECT', 'TESTABLE');
+INSERT INTO task (TITLE, DESCRIPTION, TYPE, STATUS) VALUES ('Task 7', 'task description 7', 'STORY', 'DONE');
+INSERT INTO task (TITLE, DESCRIPTION, TYPE, STATUS) VALUES ('Task 8', 'task description 8', 'STORY', 'INPROGRESS');
+INSERT INTO task (TITLE, DESCRIPTION, TYPE, STATUS) VALUES ('Task 9', 'task description 9', 'DEFECT', 'TESTABLE');
+INSERT INTO task (TITLE, DESCRIPTION, TYPE, STATUS) VALUES ('Task 10', 'task description 10', 'STORY', 'DONE');
+INSERT INTO task (TITLE, DESCRIPTION, TYPE, STATUS) VALUES ('Task 11', 'task description 11', 'STORY', 'INPROGRESS');
+INSERT INTO task (TITLE, DESCRIPTION, TYPE, STATUS) VALUES ('Task 12', 'task description 12', 'DEFECT', 'TESTABLE');
+INSERT INTO task (TITLE, DESCRIPTION, TYPE, STATUS) VALUES ('Task 13', 'task description 13', 'STORY', 'DONE');
