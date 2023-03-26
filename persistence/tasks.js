@@ -11,7 +11,21 @@ async function getTask(id) {
             id: id
         }
     })
+    if (!task) {
+        throw new Error('Invalid task id');
+    }
     return task
 }
 
-module.exports = { getTasks, getTask }
+async function updateTaskStatus(id, newStatus) {
+    const [affectedRows] = await Task.update({ status: newStatus }, {
+        where: {
+            id: id
+        }
+    })
+    if (affectedRows < 1) {
+        throw new Error('Invalid task id or task status was not changed');
+    }
+}
+
+module.exports = { getTasks, getTask, updateTaskStatus }
