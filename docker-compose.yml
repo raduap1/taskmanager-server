@@ -1,7 +1,7 @@
 services:
   taskmanager-server:
     image: node:18-alpine
-    command: sh -c "npm install && npm run start-development"
+    command: sh -c "npm install && npm run migrate && npm run start-development"
     ports:
       - "4000:4000"
       - "9229:9229"
@@ -11,6 +11,8 @@ services:
 
   mysql:
     image: mysql:8.0
+    ports:
+      - "3307:33060"
     volumes:
       - taskmanager-mysql-data:/var/lib/mysql
     environment: 
