@@ -3,11 +3,16 @@
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
+const cls = require('cls-hooked');
 const process = require('process');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.js')[env];
 const db = {};
+
+// using transactions with CLS
+const namespace = cls.createNamespace('transaction-namespace');
+Sequelize.useCLS(namespace);
 
 let sequelize;
 if (config.use_env_variable) {

@@ -19,6 +19,7 @@
     "sequelize-cli": "^6.6.0"
   },
   "dependencies": {
+    "cls-hooked": "^4.2.2",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^5.0.0-beta.1",
